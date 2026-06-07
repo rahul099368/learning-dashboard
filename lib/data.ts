@@ -19,7 +19,7 @@ export async function fetchCourses(): Promise<{
 
   try {
     const { createClient } = await import("./supabase/server");
-    const supabase = createClient();
+    const supabase = await createClient();
 
     const { data, error } = await supabase
       .from("courses")
